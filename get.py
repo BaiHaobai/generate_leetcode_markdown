@@ -243,18 +243,14 @@ class getLeetcode():
 
 if __name__ == "__main__":
     s = getLeetcode()
-    s.get_submissions('two-sum')
-    # if s.login('wu-wu-lu-lu', 'Zxcvbht123'):
-    #     questions_list = s.get_problems()
-    #     print(questions_list)
-    # else:
-    #     print('密码错误')
-    # if s.login('bht251595339@gmail.com', 'zxcvbht123'):
-    #     questions_list = s.get_problems()
-    #     for question in questions_list:
-    #         s.generate_question(s.get_problem_data(question['question_slug']),
-    #                             s.get_submissions(question['question_slug']))
-    #         time.sleep(random.randint(1, 3))
-    # else:
-    #     print('密码错误')
+    name = ''
+    password = ''
+    if s.login(name, password):
+        questions_list = s.get_problems()
+        for question in questions_list:
+            s.generate_question(s.get_problem_data(question['question_slug']),
+                                s.get_submissions(question['question_slug']))
+            time.sleep(random.randint(1, 3))
+    else:
+        print('密码错误')
     # s.generate_question()
